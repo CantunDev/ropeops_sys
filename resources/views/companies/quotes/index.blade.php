@@ -30,47 +30,77 @@
                                     <th scope="col" class="px-4 py-3">Descripcion</th>
                                     <th scope="col" class="px-4 py-3">Cliente</th>
                                     <th scope="col" class="px-4 py-3">Dias Trabajo</th>
-                                    <th scope="col" class="px-4 py-3">Fecha</th>
+                                    <th scope="col" class="px-4 py-3">Fecha cotizacion</th>
                                     <th scope="col" class="px-4 py-3">Total cotizado</th>
                                     <th scope="col" class="px-4 py-3">Cotizó</th>
                                     <th scope="col" class="px-4 py-3">Estatus</th>
+                                    <th scope="col" class="px-4 py-3">Fecha registro</th>
                                     <th scope="col" class="px-4 py-3"></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($quotes as $quote)
                                 <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                                     <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        COT-TASR-10-001
+                                        {{$quote->folio}}
                                     </th>
                                     <td class="px-4 py-2">
                                         <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
-                                            SERVICIO DE LIMPIEZA DE TANQUES DE ALMACENAMIENTO         
+                                           {{$quote->title}}
+                                           <div class="">
+                                            {{$quote->description}}
+                                        </div>  
                                         </span>
                                     </td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <div class="flex items-center">
                                             {{-- <div class="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div> --}}
-                                            MARINSA
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">30</td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">22/10/2024</td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <div class="flex items-center">
-                                            <span class="ml-1 text-center text-gray-500 dark:text-gray-400">$878,874.00</span>
+                                            {{$quote->companies->name}}
                                         </div>
                                     </td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{$quote->workdays}}
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{$quote->date}}
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <div class="flex items-center">
-                                            Ing.Bernabe Cantun 
+                                            <span class="ml-1 text-center text-gray-500 dark:text-gray-400">
+                                                {{$quote->amount}}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div class="flex items-center">
+                                            {{$quote->users}}
                                         </div>
                                     </td>
                                     <td class="px-4 py-2">
                                         En curso
                                     </td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">Just now</td>
+                                    <td class="px-4 py-3 flex items-center justify-end">
+                                        <a href="{{route('providers.edit', $quote->id)}}" type="button" class="px-2 py-1 text-xs font-medium text-center inline-flex items-center text-white bg-yellow-600 rounded-lg hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <svg class="w-4 h-5 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                                            </svg>                                      
+                                        </a>
+                                        <form  method="POST" action="{{route('providers.destroy', $quote->id)}} ">
+                                            @method('DELETE')
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{ $quote->id }}">
+                                            <button  type="submit" class="px-2 py-1 ml-1 text-xs font-medium text-center inline-flex items-center text-white bg-gray-600 rounded-lg hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-red-700 dark:focus:ring-slate-800">
+                                                <svg class="w-4 h-5 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
+                                                </svg>                                      
+                                            </button>
+                                        </form>
+                                    </td>   
                                 </tr>
                                 
+                                @endforeach
+                              
                             </tbody>
                         </table>
                     </div>

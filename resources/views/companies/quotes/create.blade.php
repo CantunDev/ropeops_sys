@@ -71,7 +71,7 @@
                     <div class="grid grid-cols-8 gap-4 mt-8 input-row">
                         <div class="col-start-1 col-span-3 ">
                             <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
-                            <textarea name="description[]" rows="2" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Descripcion" required></textarea>
+                            <textarea name="description_details[]" rows="2" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Descripcion" required></textarea>
                         </div>
                         <div class="col-span-1 ">
                             <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Cantidad</label>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-span-1 ">
                             <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Total</label>
-                            <input type="text" name="amount[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
+                            <input type="text" name="amount_details[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
                         </div>
                         <div class="col-span-1">
                             <button type="button" class="plus-btn mt-6 text-white bg-green-700 hover:bg-green-800 p-2.5 rounded-lg">+</button>
@@ -97,16 +97,16 @@
                 </div>
                 <div class="grid grid-cols-4 gap-1 mt-8">
                     <div class="col-end-5 col-span-1 ">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">SUBTOTAL</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
+                        <label for="subtotal" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">SUBTOTAL</label>
+                        <input type="number" id="subtotal" name="subtotal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
                     </div>
                     <div class="col-end-5 col-span-1 ">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">IVA</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
+                        <label for="iva" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">IVA</label>
+                        <input type="number" id="iva" name="iva" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
                     </div>
                     <div class="col-end-5 col-span-1">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">TOTAL</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
+                        <label for="amount" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">TOTAL</label>
+                        <input type="number" id="amount" name="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$0.00" required />
                     </div>
                 </div>
                 <div class="grid grid-cols-1 gap-4 mt-8">
@@ -121,24 +121,24 @@
                         <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="15" required />
                     </div>
                     <div class="col-start-1 col-span-1 ">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Tiempo de inicio</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5" required />
+                        <label for="start" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Tiempo de inicio</label>
+                        <input type="text" id="start" name="start" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5" required />
                     </div>
                     <div class="col-start-1 col-span-1 ">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Forma de pago</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="%" required />
+                        <label for="" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Forma de pago</label>
+                        <input type="text" id="" name="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="%" required />
                     </div>
                     <div class="col-start-1 col-span-1 ">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Moneda</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="MXN" required />
+                        <label for="" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Moneda</label>
+                        <input type="text" id="" name="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="MXN" required />
                     </div>
                     <div class="col-start-1 col-span-1">
-                        <label for="company_name" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Notas</label>
-                        <input type="text" id="company_name" name="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Notas:" required />
+                        <label for="notes" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Notas</label>
+                        <input type="text" id="notes" name="notes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Notas:" required />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-1 mt-8 items-center text-center">
-                    <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">Guardar</button>
+                    <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">Guardar</button>
                     <a href="{{URL::previous()}}" type="button" class="ml-4 text-gray-700 hover:text-white border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-500 dark:focus:ring-red-700">
                         Cancelar 
                     </a>
