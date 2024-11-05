@@ -83,18 +83,21 @@
                         </div>
                         <div class="col-span-1 ">
                             <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">P.U</label>
-                            <input type="text" name="unit_price[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
+                            <input type="number" name="unit_price[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
                         </div>
                         <div class="col-span-1 ">
                             <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Total</label>
-                            <input type="text" name="amount_details[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
+                            <input type="number" name="amount_details[]" class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="$0.00" required />
                         </div>
                         <div class="col-span-1">
                             <button type="button" class="plus-btn mt-6 text-white bg-green-700 hover:bg-green-800 p-2.5 rounded-lg">+</button>
                             <button type="button" class="minus-btn mt-6 text-white bg-red-700 hover:bg-red-800 p-2.5 rounded-lg">-</button>
                         </div>
                     </div>
-                </div>
+                </div> 
+
+                Condensador garantia 50 mil 
+                - 
                 <div class="grid grid-cols-4 gap-1 mt-8">
                     <div class="col-end-5 col-span-1 ">
                         <label for="subtotal" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">SUBTOTAL</label>

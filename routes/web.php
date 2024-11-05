@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('services', ServicesController::class);
     Route::resource('categories', CategoriesController::class);
     Route::resource('quotes_company', CompaniesQuotesController::class);
+
+
 });
 
 

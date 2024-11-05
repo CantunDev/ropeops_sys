@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+// use Haruncpi\LaravelIdGenerator\IdGenerator;
+
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

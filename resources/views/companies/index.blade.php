@@ -79,7 +79,7 @@
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                         {{-- <div class="flex items-center text-center" > --}}
                                             {{-- <div class="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div> --}}
-                                            95
+                                            {{$company->quotes->count()}}
                                         {{-- </div> --}}
                                     </td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
@@ -104,6 +104,7 @@
                                     </td>
                                    
                                     <td class="px-4 py-2 flex">
+                                       
                                         <a href="{{route('companies.edit', $company->id)}}" type="button" class="px-2 py-1 text-xs font-medium text-center inline-flex items-center text-white bg-yellow-600 rounded-lg hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
                                             <svg class="w-4 h-5 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="none" viewBox="0 0 24 24">
                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>

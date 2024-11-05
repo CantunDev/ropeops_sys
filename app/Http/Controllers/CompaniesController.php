@@ -14,7 +14,7 @@ class CompaniesController extends Controller
     {
 
         // $companies = Companies::withTrashed()->get();
-         $companies = Companies::all();
+         $companies = Companies::with('quotes')->get();
         return view('companies.index', compact('companies'));
     }
 
