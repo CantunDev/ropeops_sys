@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProvidersController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\WorkersController;
+use App\Models\Companies;
 use App\Models\CompanyQuote;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoriesController::class);
     Route::resource('quotes_company', CompaniesQuotesController::class);
 
-
+    Route::group(['prefix'=>'quotes_company'], function(){
+        Route::get('/{id}/pdf', [CompaniesQuotesController::class, 'pdf'])->name('quotes_company.pdf');
+        Route::get('/{id}/upload', [CompaniesQuotesController::class, 'pdf'])->name('quotes_company.upload');
+    });
 });
 
 

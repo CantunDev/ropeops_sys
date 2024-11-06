@@ -6,6 +6,7 @@ use App\Models\Companies;
 use App\Models\CompanyQuote;
 use App\Models\CompanyQuoteDetail;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CompaniesQuotesController extends Controller
 {
@@ -81,4 +82,21 @@ class CompaniesQuotesController extends Controller
     {
         //
     }
+
+    public function pdf(string $id)
+    {
+        $data = CompanyQuote::find($id)->toArray();
+    
+        // return $company;
+        // return view('pdf.quotes_company');
+        // $pdf = Pdf::loadView('pdf.quotes_company');
+        return PDF::loadView('pdf.quotes_company', $data)
+        ->stream('archivo.pdf');
+     // return $pdf->download('invoice.pdf');
+    //     return pdf('pdf.quotes_company', [
+    //         'invoiceNumber' => '1234',
+    //         'customerName' => 'Grumpy Cat',
+    //     ]);
+     }
+
 }
